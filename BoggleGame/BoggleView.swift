@@ -21,7 +21,7 @@ class BoggleView: UIView {
         numberScreen.translatesAutoresizingMaskIntoConstraints = false
         numberScreen.heightAnchor.constraint(equalToConstant: 80).isActive = true
         numberScreen.textColor = .white
-        numberScreen.font = UIFont(name: "Helvetica-Bold", size: 72)
+        numberScreen.font = UIFont(name: "Helvetica-Bold", size: 36)
         numberScreen.layer.borderColor = UIColor.white.cgColor
         numberScreen.layer.borderWidth = 1
         numberScreen.layer.cornerRadius = 3
@@ -59,16 +59,24 @@ class BoggleView: UIView {
                 let button = BoggleButton()
                 row.addArrangedSubview(button)
                 button.setTitle(String(buttonIndex), for: .normal)
-                button.addTarget(self, action: #selector(self.typeToScreen), for: .touchUpInside)
+                button.addTarget(self, action: #selector(self.boggleButtonTouchUpInside), for: .touchUpInside)
                 buttonIndex += 1
             }
         }
     }
     
-    func typeToScreen(sender: UIButton) {
+    func boggleButtonTouchUpInside(sender: UIButton) {
         if let buttonText = sender.title(for: .normal) {
-            self.numberScreen.text = buttonText
+            appendTextToScreen(text: buttonText)
         }
+    }
+    
+    func appendTextToScreen(text: String) {
+        var currentText = self.numberScreen.text
+        if currentText == nil {
+            currentText = ""
+        }
+        numberScreen.text = currentText! + text
     }
     
     func clearScreen() {
