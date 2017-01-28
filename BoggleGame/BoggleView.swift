@@ -46,7 +46,7 @@ class BoggleView: UIView {
         rows.distribution = .fillEqually
         rows.spacing = 15
         
-        var buttonIndex = 1
+        var buttonIndex = 0
         for _ in 0...3 {
             let row = UIStackView()
             row.axis = .horizontal
