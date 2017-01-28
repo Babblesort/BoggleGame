@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5AFCA4D11E3A395D00D45056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA4D01E3A395D00D45056 /* AppDelegate.swift */; };
+		5AFCA4D31E3A395D00D45056 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA4D21E3A395D00D45056 /* ViewController.swift */; };
+		5AFCA4D91E3A395D00D45056 /* BoggleGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA4D71E3A395D00D45056 /* BoggleGame.xcdatamodeld */; };
+		5AFCA4DB1E3A395D00D45056 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFCA4DA1E3A395D00D45056 /* Assets.xcassets */; };
+		5AFCA4DE1E3A395D00D45056 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFCA4DC1E3A395D00D45056 /* LaunchScreen.storyboard */; };
+		5AFCA4E91E3A395D00D45056 /* BoggleGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA4E81E3A395D00D45056 /* BoggleGameTests.swift */; };
+		5AFCA4F41E3A395D00D45056 /* BoggleGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA4F31E3A395D00D45056 /* BoggleGameUITests.swift */; };
+		5AFCA5021E3A3C1C00D45056 /* BoggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA5011E3A3C1C00D45056 /* BoggleView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AFCA4E51E3A395D00D45056 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AFCA4C51E3A395D00D45056 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AFCA4CC1E3A395D00D45056;
+			remoteInfo = BoggleGame;
+		};
+		5AFCA4F01E3A395D00D45056 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AFCA4C51E3A395D00D45056 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AFCA4CC1E3A395D00D45056;
+			remoteInfo = BoggleGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5AFCA4CD1E3A395D00D45056 /* BoggleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoggleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AFCA4D01E3A395D00D45056 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5AFCA4D21E3A395D00D45056 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5AFCA4D81E3A395D00D45056 /* BoggleGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BoggleGame.xcdatamodel; sourceTree = "<group>"; };
+		5AFCA4DA1E3A395D00D45056 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5AFCA4DD1E3A395D00D45056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5AFCA4DF1E3A395D00D45056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AFCA4E41E3A395D00D45056 /* BoggleGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoggleGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AFCA4E81E3A395D00D45056 /* BoggleGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoggleGameTests.swift; sourceTree = "<group>"; };
+		5AFCA4EA1E3A395D00D45056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AFCA4EF1E3A395D00D45056 /* BoggleGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoggleGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AFCA4F31E3A395D00D45056 /* BoggleGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoggleGameUITests.swift; sourceTree = "<group>"; };
+		5AFCA4F51E3A395D00D45056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AFCA5011E3A3C1C00D45056 /* BoggleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoggleView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AFCA4CA1E3A395D00D45056 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFCA4E11E3A395D00D45056 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFCA4EC1E3A395D00D45056 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AFCA4C41E3A395D00D45056 = {
+			isa = PBXGroup;
+			children = (
+				5AFCA4CF1E3A395D00D45056 /* BoggleGame */,
+				5AFCA4E71E3A395D00D45056 /* BoggleGameTests */,
+				5AFCA4F21E3A395D00D45056 /* BoggleGameUITests */,
+				5AFCA4CE1E3A395D00D45056 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5AFCA4CE1E3A395D00D45056 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AFCA4CD1E3A395D00D45056 /* BoggleGame.app */,
+				5AFCA4E41E3A395D00D45056 /* BoggleGameTests.xctest */,
+				5AFCA4EF1E3A395D00D45056 /* BoggleGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AFCA4CF1E3A395D00D45056 /* BoggleGame */ = {
+			isa = PBXGroup;
+			children = (
+				5AFCA4D01E3A395D00D45056 /* AppDelegate.swift */,
+				5AFCA4D21E3A395D00D45056 /* ViewController.swift */,
+				5AFCA4DA1E3A395D00D45056 /* Assets.xcassets */,
+				5AFCA4DC1E3A395D00D45056 /* LaunchScreen.storyboard */,
+				5AFCA4DF1E3A395D00D45056 /* Info.plist */,
+				5AFCA4D71E3A395D00D45056 /* BoggleGame.xcdatamodeld */,
+				5AFCA5011E3A3C1C00D45056 /* BoggleView.swift */,
+			);
+			path = BoggleGame;
+			sourceTree = "<group>";
+		};
+		5AFCA4E71E3A395D00D45056 /* BoggleGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AFCA4E81E3A395D00D45056 /* BoggleGameTests.swift */,
+				5AFCA4EA1E3A395D00D45056 /* Info.plist */,
+			);
+			path = BoggleGameTests;
+			sourceTree = "<group>";
+		};
+		5AFCA4F21E3A395D00D45056 /* BoggleGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5AFCA4F31E3A395D00D45056 /* BoggleGameUITests.swift */,
+				5AFCA4F51E3A395D00D45056 /* Info.plist */,
+			);
+			path = BoggleGameUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AFCA4CC1E3A395D00D45056 /* BoggleGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AFCA4F81E3A395D00D45056 /* Build configuration list for PBXNativeTarget "BoggleGame" */;
+			buildPhases = (
+				5AFCA4C91E3A395D00D45056 /* Sources */,
+				5AFCA4CA1E3A395D00D45056 /* Frameworks */,
+				5AFCA4CB1E3A395D00D45056 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BoggleGame;
+			productName = BoggleGame;
+			productReference = 5AFCA4CD1E3A395D00D45056 /* BoggleGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5AFCA4E31E3A395D00D45056 /* BoggleGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AFCA4FB1E3A395D00D45056 /* Build configuration list for PBXNativeTarget "BoggleGameTests" */;
+			buildPhases = (
+				5AFCA4E01E3A395D00D45056 /* Sources */,
+				5AFCA4E11E3A395D00D45056 /* Frameworks */,
+				5AFCA4E21E3A395D00D45056 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AFCA4E61E3A395D00D45056 /* PBXTargetDependency */,
+			);
+			name = BoggleGameTests;
+			productName = BoggleGameTests;
+			productReference = 5AFCA4E41E3A395D00D45056 /* BoggleGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5AFCA4EE1E3A395D00D45056 /* BoggleGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AFCA4FE1E3A395D00D45056 /* Build configuration list for PBXNativeTarget "BoggleGameUITests" */;
+			buildPhases = (
+				5AFCA4EB1E3A395D00D45056 /* Sources */,
+				5AFCA4EC1E3A395D00D45056 /* Frameworks */,
+				5AFCA4ED1E3A395D00D45056 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AFCA4F11E3A395D00D45056 /* PBXTargetDependency */,
+			);
+			name = BoggleGameUITests;
+			productName = BoggleGameUITests;
+			productReference = 5AFCA4EF1E3A395D00D45056 /* BoggleGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AFCA4C51E3A395D00D45056 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Asynchrony;
+				TargetAttributes = {
+					5AFCA4CC1E3A395D00D45056 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					5AFCA4E31E3A395D00D45056 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5AFCA4CC1E3A395D00D45056;
+					};
+					5AFCA4EE1E3A395D00D45056 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5AFCA4CC1E3A395D00D45056;
+					};
+				};
+			};
+			buildConfigurationList = 5AFCA4C81E3A395D00D45056 /* Build configuration list for PBXProject "BoggleGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5AFCA4C41E3A395D00D45056;
+			productRefGroup = 5AFCA4CE1E3A395D00D45056 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AFCA4CC1E3A395D00D45056 /* BoggleGame */,
+				5AFCA4E31E3A395D00D45056 /* BoggleGameTests */,
+				5AFCA4EE1E3A395D00D45056 /* BoggleGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AFCA4CB1E3A395D00D45056 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFCA4DE1E3A395D00D45056 /* LaunchScreen.storyboard in Resources */,
+				5AFCA4DB1E3A395D00D45056 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFCA4E21E3A395D00D45056 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFCA4ED1E3A395D00D45056 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AFCA4C91E3A395D00D45056 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFCA4D31E3A395D00D45056 /* ViewController.swift in Sources */,
+				5AFCA4D91E3A395D00D45056 /* BoggleGame.xcdatamodeld in Sources */,
+				5AFCA5021E3A3C1C00D45056 /* BoggleView.swift in Sources */,
+				5AFCA4D11E3A395D00D45056 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFCA4E01E3A395D00D45056 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFCA4E91E3A395D00D45056 /* BoggleGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFCA4EB1E3A395D00D45056 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFCA4F41E3A395D00D45056 /* BoggleGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AFCA4E61E3A395D00D45056 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AFCA4CC1E3A395D00D45056 /* BoggleGame */;
+			targetProxy = 5AFCA4E51E3A395D00D45056 /* PBXContainerItemProxy */;
+		};
+		5AFCA4F11E3A395D00D45056 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AFCA4CC1E3A395D00D45056 /* BoggleGame */;
+			targetProxy = 5AFCA4F01E3A395D00D45056 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5AFCA4DC1E3A395D00D45056 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AFCA4DD1E3A395D00D45056 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5AFCA4F61E3A395D00D45056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5AFCA4F71E3A395D00D45056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AFCA4F91E3A395D00D45056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BoggleGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Async.BoggleGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5AFCA4FA1E3A395D00D45056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BoggleGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Async.BoggleGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		5AFCA4FC1E3A395D00D45056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BoggleGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Async.BoggleGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoggleGame.app/BoggleGame";
+			};
+			name = Debug;
+		};
+		5AFCA4FD1E3A395D00D45056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BoggleGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Async.BoggleGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoggleGame.app/BoggleGame";
+			};
+			name = Release;
+		};
+		5AFCA4FF1E3A395D00D45056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = BoggleGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Async.BoggleGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BoggleGame;
+			};
+			name = Debug;
+		};
+		5AFCA5001E3A395D00D45056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = BoggleGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Async.BoggleGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BoggleGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5AFCA4C81E3A395D00D45056 /* Build configuration list for PBXProject "BoggleGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AFCA4F61E3A395D00D45056 /* Debug */,
+				5AFCA4F71E3A395D00D45056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AFCA4F81E3A395D00D45056 /* Build configuration list for PBXNativeTarget "BoggleGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AFCA4F91E3A395D00D45056 /* Debug */,
+				5AFCA4FA1E3A395D00D45056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5AFCA4FB1E3A395D00D45056 /* Build configuration list for PBXNativeTarget "BoggleGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AFCA4FC1E3A395D00D45056 /* Debug */,
+				5AFCA4FD1E3A395D00D45056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5AFCA4FE1E3A395D00D45056 /* Build configuration list for PBXNativeTarget "BoggleGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AFCA4FF1E3A395D00D45056 /* Debug */,
+				5AFCA5001E3A395D00D45056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5AFCA4D71E3A395D00D45056 /* BoggleGame.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5AFCA4D81E3A395D00D45056 /* BoggleGame.xcdatamodel */,
+			);
+			currentVersion = 5AFCA4D81E3A395D00D45056 /* BoggleGame.xcdatamodel */;
+			path = BoggleGame.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5AFCA4C51E3A395D00D45056 /* Project object */;
+}
