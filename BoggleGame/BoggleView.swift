@@ -27,11 +27,10 @@ class BoggleView: UIView {
         numberScreen.layer.cornerRadius = 3
         numberScreen.textAlignment = NSTextAlignment.center
         
-        let clearButton = UIButton()
+        let clearButton = BoggleButton()
         clearButton.translatesAutoresizingMaskIntoConstraints = false
         screenArea.addArrangedSubview(clearButton)
         clearButton.widthAnchor.constraint(equalTo: screenArea.widthAnchor, multiplier: 1/5).isActive = true
-        styleBoggleButton(button: clearButton)
         clearButton.setTitle("Clear", for: .normal)
         clearButton.addTarget(self, action: #selector(self.clearScreen), for: .touchUpInside)
         
@@ -57,24 +56,13 @@ class BoggleView: UIView {
             row.translatesAutoresizingMaskIntoConstraints = false
             
             for _ in 0...3 {
-                let button = UIButton()
+                let button = BoggleButton()
                 row.addArrangedSubview(button)
-                styleBoggleButton(button: button)
                 button.setTitle(String(buttonIndex), for: .normal)
                 button.addTarget(self, action: #selector(self.typeToScreen), for: .touchUpInside)
                 buttonIndex += 1
             }
         }
-    }
-    
-    func styleBoggleButton(button: UIButton) {
-        button.backgroundColor = .gray
-        button.layer.borderColor = UIColor.black.cgColor
-        button.layer.borderWidth = 1
-        button.layer.cornerRadius = 3
-        button.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 24)
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.setTitleColor(UIColor.green, for: .highlighted)
     }
     
     func typeToScreen(sender: UIButton) {
