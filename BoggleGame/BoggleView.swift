@@ -65,13 +65,14 @@ class BoggleView: UIView {
         }
     }
     
-    func boggleButtonTouchUpInside(sender: UIButton) {
+    @objc
+    private func boggleButtonTouchUpInside(sender: UIButton) {
         if let buttonText = sender.title(for: .normal) {
             appendTextToScreen(text: buttonText)
         }
     }
     
-    func appendTextToScreen(text: String) {
+    private func appendTextToScreen(text: String) {
         var currentText = self.numberScreen.text
         if currentText == nil {
             currentText = ""
@@ -79,7 +80,8 @@ class BoggleView: UIView {
         numberScreen.text = currentText! + text
     }
     
-    func clearScreen() {
+    @objc
+    private func clearScreen() {
         self.numberScreen.text = ""
     }
     
