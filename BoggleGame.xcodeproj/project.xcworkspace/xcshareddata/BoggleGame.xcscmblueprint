@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "35622FB89B5BAE90A9569E80D33E5B6A5DB30ED9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "35622FB89B5BAE90A9569E80D33E5B6A5DB30ED9" : 9223372036854775807,
+    "4C92D96E47F9074DE5726584291CA86425E1D377" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "25767734-CC24-4970-AAF0-24F498BD31A4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "35622FB89B5BAE90A9569E80D33E5B6A5DB30ED9" : "BoggleGame\/",
+    "4C92D96E47F9074DE5726584291CA86425E1D377" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BoggleGame",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BoggleGame.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Babblesort\/BoggleGame.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "35622FB89B5BAE90A9569E80D33E5B6A5DB30ED9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/gitlab.asynchrony.com\/proj-661\/ios-for-devs.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4C92D96E47F9074DE5726584291CA86425E1D377"
+    }
+  ]
+}

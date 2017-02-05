@@ -1,7 +1,16 @@
 import UIKit
 
+protocol BoggleViewProtocol: class {
+    func buttonPressedWithLetter(letter: String)
+    func clearWord()
+    func getRandomLetters(n: Int) -> [String]
+}
+
 class BoggleView: UIView {
-    let numberScreen = UILabel()
+    
+    weak var delegate: BoggleViewProtocol?
+    let wordDisplay = UILabel()
+    var letterButtons = [UIButton]()
     
     init() {
         super.init(frame: CGRect.zero)
@@ -17,15 +26,15 @@ class BoggleView: UIView {
         screenArea.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
         screenArea.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
 
-        screenArea.addArrangedSubview(numberScreen)
-        numberScreen.translatesAutoresizingMaskIntoConstraints = false
-        numberScreen.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        numberScreen.textColor = .white
-        numberScreen.font = UIFont(name: "Helvetica-Bold", size: 36)
-        numberScreen.layer.borderColor = UIColor.white.cgColor
-        numberScreen.layer.borderWidth = 1
-        numberScreen.layer.cornerRadius = 3
-        numberScreen.textAlignment = NSTextAlignment.center
+        screenArea.addArrangedSubview(wordDisplay)
+        wordDisplay.translatesAutoresizingMaskIntoConstraints = false
+        wordDisplay.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        wordDisplay.textColor = .white
+        wordDisplay.font = UIFont(name: "Helvetica-Bold", size: 36)
+        wordDisplay.layer.borderColor = UIColor.white.cgColor
+        wordDisplay.layer.borderWidth = 1
+        wordDisplay.layer.cornerRadius = 3
+        wordDisplay.textAlignment = NSTextAlignment.center
         
         let clearButton = BoggleButton()
         clearButton.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +42,6 @@ class BoggleView: UIView {
         clearButton.widthAnchor.constraint(equalTo: screenArea.widthAnchor, multiplier: 1/5).isActive = true
         clearButton.setTitle("Clear", for: .normal)
         clearButton.addTarget(self, action: #selector(self.clearScreen), for: .touchUpInside)
-        
         
         let rows = UIStackView()
         rows.axis = .vertical
@@ -45,6 +53,17 @@ class BoggleView: UIView {
         rows.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
         rows.distribution = .fillEqually
         rows.spacing = 15
+        
+        let row = UIStackView()
+        row.axis = .horizontal
+        rows.addArrangedSubview(row)
+        row.distribution = .fillEqually
+        row.spacing = 10
+        row.translatesAutoresizingMaskIntoConstraints = false
+        let button = BoggleButton()
+        row.addArrangedSubview(button)
+        button.setTitle("Reset Game", for: .normal)
+        button.addTarget(self, action: #selector(self.resetGame), for: .touchUpInside)
         
         var buttonIndex = 0
         for _ in 0...3 {
@@ -58,33 +77,42 @@ class BoggleView: UIView {
             for _ in 0...3 {
                 let button = BoggleButton()
                 row.addArrangedSubview(button)
-                button.setTitle(String(buttonIndex), for: .normal)
-                button.addTarget(self, action: #selector(self.boggleButtonTouchUpInside), for: .touchUpInside)
+                button.addTarget(self, action: #selector(self.didClickLetter), for: .touchUpInside)
                 buttonIndex += 1
+                letterButtons.append(button)
             }
         }
     }
     
     @objc
-    private func boggleButtonTouchUpInside(sender: UIButton) {
+    private func didClickLetter(sender: UIButton) {
         if let buttonText = sender.title(for: .normal) {
-            appendTextToScreen(text: buttonText)
+            self.delegate?.buttonPressedWithLetter(letter: buttonText)
         }
     }
-    
-    private func appendTextToScreen(text: String) {
-        var currentText = self.numberScreen.text
-        if currentText == nil {
-            currentText = ""
+
+    @objc
+    private func resetGame(sender: UIButton) {
+        clearScreen()
+        let randomLetters = delegate?.getRandomLetters(n: 16)
+        for (index, button) in letterButtons.enumerated() {
+            button.setTitle(randomLetters?[index], for: .normal)
         }
-        numberScreen.text = currentText! + text
     }
-    
+
     @objc
     private func clearScreen() {
-        self.numberScreen.text = ""
+        self.delegate?.clearWord()
     }
     
+    func getRandomLetters(n: Int) -> [String] {
+        return (delegate?.getRandomLetters(n: n))!
+    }
+    
+    func setCurrentWord(text: String) {
+        wordDisplay.text = text
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

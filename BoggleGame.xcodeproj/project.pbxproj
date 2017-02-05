@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5A453B7C1E3D0EBF00FE03E3 /* BoggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A453B7B1E3D0EBF00FE03E3 /* BoggleButton.swift */; };
+		5A453B7E1E4375B500FE03E3 /* BoggleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A453B7D1E4375B500FE03E3 /* BoggleModel.swift */; };
 		5AFCA4D11E3A395D00D45056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA4D01E3A395D00D45056 /* AppDelegate.swift */; };
-		5AFCA4D31E3A395D00D45056 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA4D21E3A395D00D45056 /* ViewController.swift */; };
+		5AFCA4D31E3A395D00D45056 /* BoggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA4D21E3A395D00D45056 /* BoggleViewController.swift */; };
 		5AFCA4D91E3A395D00D45056 /* BoggleGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA4D71E3A395D00D45056 /* BoggleGame.xcdatamodeld */; };
 		5AFCA4DB1E3A395D00D45056 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFCA4DA1E3A395D00D45056 /* Assets.xcassets */; };
 		5AFCA4DE1E3A395D00D45056 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFCA4DC1E3A395D00D45056 /* LaunchScreen.storyboard */; };
@@ -37,9 +38,10 @@
 
 /* Begin PBXFileReference section */
 		5A453B7B1E3D0EBF00FE03E3 /* BoggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoggleButton.swift; sourceTree = "<group>"; };
+		5A453B7D1E4375B500FE03E3 /* BoggleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoggleModel.swift; sourceTree = "<group>"; };
 		5AFCA4CD1E3A395D00D45056 /* BoggleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoggleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFCA4D01E3A395D00D45056 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5AFCA4D21E3A395D00D45056 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5AFCA4D21E3A395D00D45056 /* BoggleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoggleViewController.swift; sourceTree = "<group>"; };
 		5AFCA4D81E3A395D00D45056 /* BoggleGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BoggleGame.xcdatamodel; sourceTree = "<group>"; };
 		5AFCA4DA1E3A395D00D45056 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AFCA4DD1E3A395D00D45056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,13 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				5AFCA4D01E3A395D00D45056 /* AppDelegate.swift */,
-				5AFCA4D21E3A395D00D45056 /* ViewController.swift */,
+				5AFCA4D21E3A395D00D45056 /* BoggleViewController.swift */,
+				5A453B7D1E4375B500FE03E3 /* BoggleModel.swift */,
+				5AFCA5011E3A3C1C00D45056 /* BoggleView.swift */,
+				5A453B7B1E3D0EBF00FE03E3 /* BoggleButton.swift */,
 				5AFCA4DA1E3A395D00D45056 /* Assets.xcassets */,
 				5AFCA4DC1E3A395D00D45056 /* LaunchScreen.storyboard */,
 				5AFCA4DF1E3A395D00D45056 /* Info.plist */,
 				5AFCA4D71E3A395D00D45056 /* BoggleGame.xcdatamodeld */,
-				5AFCA5011E3A3C1C00D45056 /* BoggleView.swift */,
-				5A453B7B1E3D0EBF00FE03E3 /* BoggleButton.swift */,
 			);
 			path = BoggleGame;
 			sourceTree = "<group>";
@@ -264,11 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AFCA4D31E3A395D00D45056 /* ViewController.swift in Sources */,
+				5AFCA4D31E3A395D00D45056 /* BoggleViewController.swift in Sources */,
 				5AFCA4D91E3A395D00D45056 /* BoggleGame.xcdatamodeld in Sources */,
 				5AFCA5021E3A3C1C00D45056 /* BoggleView.swift in Sources */,
 				5A453B7C1E3D0EBF00FE03E3 /* BoggleButton.swift in Sources */,
 				5AFCA4D11E3A395D00D45056 /* AppDelegate.swift in Sources */,
+				5A453B7E1E4375B500FE03E3 /* BoggleModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
