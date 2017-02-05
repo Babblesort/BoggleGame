@@ -33,7 +33,7 @@ extension BoggleViewController: BoggleViewProtocol {
         boggleModel.resetGame()
     }
 
-    internal func buttonPressedWithLetter(letter: String) {
+    internal func didClickLetter(letter: String) {
         boggleModel.addLetterToCurrentWord(letter: letter)
     }
     

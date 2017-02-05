@@ -1,7 +1,7 @@
 import UIKit
 
 protocol BoggleViewProtocol: class {
-    func buttonPressedWithLetter(letter: String)
+    func didClickLetter(letter: String)
     func clearWord()
     func resetGame()
 }
@@ -87,7 +87,7 @@ class BoggleView: UIView {
     @objc
     private func didClickLetter(sender: UIButton) {
         if let buttonText = sender.title(for: .normal) {
-            delegate?.buttonPressedWithLetter(letter: buttonText)
+            delegate?.didClickLetter(letter: buttonText)
         }
     }
 
