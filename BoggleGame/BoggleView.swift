@@ -3,14 +3,14 @@ import UIKit
 protocol BoggleViewProtocol: class {
     func buttonPressedWithLetter(letter: String)
     func clearWord()
-    func getRandomLetters(n: Int) -> [String]
+    func resetGame()
 }
 
 class BoggleView: UIView {
     
     weak var delegate: BoggleViewProtocol?
     let wordDisplay = UILabel()
-    var letterButtons = [UIButton]()
+    var letterButtons = [BoggleButton]()
     
     init() {
         super.init(frame: CGRect.zero)
@@ -87,26 +87,24 @@ class BoggleView: UIView {
     @objc
     private func didClickLetter(sender: UIButton) {
         if let buttonText = sender.title(for: .normal) {
-            self.delegate?.buttonPressedWithLetter(letter: buttonText)
+            delegate?.buttonPressedWithLetter(letter: buttonText)
         }
     }
 
     @objc
     private func resetGame(sender: UIButton) {
-        clearScreen()
-        let randomLetters = delegate?.getRandomLetters(n: 16)
-        for (index, button) in letterButtons.enumerated() {
-            button.setTitle(randomLetters?[index], for: .normal)
-        }
+        delegate?.resetGame()
     }
 
     @objc
     private func clearScreen() {
-        self.delegate?.clearWord()
+        delegate?.clearWord()
     }
     
-    func getRandomLetters(n: Int) -> [String] {
-        return (delegate?.getRandomLetters(n: n))!
+    func setButtonLetters(randomLetters: [String]) {
+        for (index, letter) in randomLetters.enumerated() {
+            letterButtons[index].setTitle(letter, for: .normal)
+        }
     }
     
     func setCurrentWord(text: String) {

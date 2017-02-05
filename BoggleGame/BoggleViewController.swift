@@ -20,6 +20,7 @@ class BoggleViewController: UIViewController{
         self.view = boggleView
         boggleView.delegate = self
         boggleModel.delegate = self
+        boggleModel.resetGame()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,21 +29,25 @@ class BoggleViewController: UIViewController{
 }
 
 extension BoggleViewController: BoggleViewProtocol {
-    func getRandomLetters(n: Int) -> [String] {
-        return boggleModel.getRandomLetters(n: n)
+    internal func resetGame() {
+        boggleModel.resetGame()
     }
 
-    func buttonPressedWithLetter(letter: String) {
+    internal func buttonPressedWithLetter(letter: String) {
         boggleModel.addLetterToCurrentWord(letter: letter)
     }
     
-    func clearWord() {
+    internal func clearWord() {
         boggleModel.clearWord()
     }
 }
 
 extension BoggleViewController: BoggleModelProtocol {
-    func currentWordUpdated(currentWord: String) {
+    internal func didRandomizeLetters(randomLetters: [String]) {
+        boggleView.setButtonLetters(randomLetters: randomLetters)
+    }
+
+    func didUpdateCurrentWord(currentWord: String) {
         boggleView.setCurrentWord(text: currentWord)
     }
 }
