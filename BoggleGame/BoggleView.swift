@@ -92,7 +92,7 @@ class BoggleView: UIView {
     }
 
     @objc
-    private func resetGame(sender: UIButton) {
+    private func resetGame() {
         delegate?.resetGame()
     }
 
