@@ -47,7 +47,7 @@ extension BoggleViewController: BoggleModelProtocol {
         boggleView.setButtonLetters(randomLetters: randomLetters)
     }
 
-    func didUpdateCurrentWord(currentWord: String) {
+    internal func didUpdateCurrentWord(currentWord: String) {
         boggleView.setCurrentWord(text: currentWord)
     }
 }
