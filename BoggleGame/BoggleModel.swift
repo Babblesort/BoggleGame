@@ -11,6 +11,7 @@ class BoggleModel {
     private var currentWord: String = ""
     private var randomLetters = [String]()
     private let letterCount = 16
+    private var words = [String]()
     
     private func randomLetter() -> String {
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -36,5 +37,9 @@ class BoggleModel {
     func clearWord() {
         currentWord = ""
         delegate?.didUpdateCurrentWord(currentWord: currentWord)
+    }
+    
+    func addWord() {
+        words.append(currentWord)
     }
 }

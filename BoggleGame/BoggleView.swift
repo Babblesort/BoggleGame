@@ -4,6 +4,7 @@ protocol BoggleViewProtocol: class {
     func didClickLetter(letter: String)
     func clearWord()
     func resetGame()
+    func addWord()
 }
 
 class BoggleView: UIView {
@@ -42,7 +43,14 @@ class BoggleView: UIView {
         clearButton.widthAnchor.constraint(equalTo: screenArea.widthAnchor, multiplier: 1/5).isActive = true
         clearButton.setTitle("Clear", for: .normal)
         clearButton.addTarget(self, action: #selector(self.clearScreen), for: .touchUpInside)
-        
+
+        let enterButton = BoggleButton()
+        enterButton.translatesAutoresizingMaskIntoConstraints = false
+        screenArea.addArrangedSubview(enterButton)
+        enterButton.widthAnchor.constraint(equalTo: screenArea.widthAnchor, multiplier: 1/5).isActive = true
+        enterButton.setTitle("Add", for: .normal)
+        enterButton.addTarget(self, action: #selector(self.addWord), for: .touchUpInside)
+
         let rows = UIStackView()
         rows.axis = .vertical
         self.addSubview(rows)
@@ -100,7 +108,12 @@ class BoggleView: UIView {
     private func clearScreen() {
         delegate?.clearWord()
     }
-    
+
+    @objc
+    private func addWord() {
+        delegate?.addWord()
+    }
+
     func setButtonLetters(randomLetters: [String]) {
         for (index, letter) in randomLetters.enumerated() {
             letterButtons[index].setTitle(letter, for: .normal)

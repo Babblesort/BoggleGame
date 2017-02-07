@@ -40,6 +40,10 @@ extension BoggleViewController: BoggleViewProtocol {
     internal func clearWord() {
         boggleModel.clearWord()
     }
+    
+    internal func addWord() {
+        boggleModel.addWord()
+    }
 }
 
 extension BoggleViewController: BoggleModelProtocol {
