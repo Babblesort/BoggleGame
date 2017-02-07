@@ -30,11 +30,11 @@ class BoggleModel {
     
     func addLetterToCurrentWord(letter: String) {
         currentWord.append(letter)
-        self.delegate?.didUpdateCurrentWord(currentWord: currentWord)
+        delegate?.didUpdateCurrentWord(currentWord: currentWord)
     }
     
     func clearWord() {
         currentWord = ""
-        self.delegate?.didUpdateCurrentWord(currentWord: currentWord)
+        delegate?.didUpdateCurrentWord(currentWord: currentWord)
     }
 }
