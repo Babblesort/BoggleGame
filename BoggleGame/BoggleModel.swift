@@ -43,9 +43,11 @@ class BoggleModel {
     }
     
     func addWord() {
-        words.append(currentWord)
-        currentWord = ""
-        delegate?.didUpdateCurrentWord(currentWord: currentWord)
-        delegate?.didUpdateWordList(wordList: words)
+        if currentWord.characters.count > 0 {
+            words.append(currentWord)
+            currentWord = ""
+            delegate?.didUpdateCurrentWord(currentWord: currentWord)
+            delegate?.didUpdateWordList(wordList: words)
+        }
     }
 }
