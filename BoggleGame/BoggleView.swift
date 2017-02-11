@@ -91,7 +91,6 @@ class BoggleView: UIView, UITableViewDelegate, UITableViewDataSource {
         wordListTableView.translatesAutoresizingMaskIntoConstraints = false
         wordListTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
         wordListTableView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20).isActive = true
-
     }
     
     @objc

@@ -1,11 +1,4 @@
-//
-//  BoggleModelTests.swift
-//  BoggleGame
-//
-//  Created by dev1 on 2/9/17.
-//  Copyright © 2017 Asynchrony. All rights reserved.
-//
-
+@testable import BoggleGame
 import XCTest
 
 class BoggleModelTests: XCTestCase {
@@ -18,6 +11,12 @@ class BoggleModelTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func test_AddLetterToCurrentWord_AddsTheLetter() {
+        let testObject = BoggleModel()
+        testObject.addLetterToCurrentWord(letter: "h")
+        XCTAssertEqual("h", testObject.currentWord)
     }
     
     func testExample() {
