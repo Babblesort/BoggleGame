@@ -27,6 +27,8 @@ class BoggleModel {
         for _ in 0...letterCount - 1 {
             randomLetters.append(randomLetter())
         }
+        words = [String]()
+        delegate?.didUpdateWordList(wordList: words)
         delegate?.didRandomizeLetters(randomLetters: randomLetters)
     }
     
