@@ -3,15 +3,16 @@ import Foundation
 protocol BoggleModelProtocol: class {
     func didUpdateCurrentWord(currentWord: String)
     func didRandomizeLetters(randomLetters: [String])
+    func didUpdateWordList(wordList: [String])
 }
 
 class BoggleModel {
     
     weak var delegate: BoggleModelProtocol?
-    private var currentWord: String = ""
-    private var randomLetters = [String]()
-    private let letterCount = 16
-    private var words = [String]()
+    var currentWord: String = ""
+    var randomLetters = [String]()
+    let letterCount = 16
+    var words = [String]()
     
     private func randomLetter() -> String {
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -41,5 +42,8 @@ class BoggleModel {
     
     func addWord() {
         words.append(currentWord)
+        currentWord = ""
+        delegate?.didUpdateCurrentWord(currentWord: currentWord)
+        delegate?.didUpdateWordList(wordList: words)
     }
 }

@@ -7,29 +7,32 @@ protocol BoggleViewProtocol: class {
     func addWord()
 }
 
-class BoggleView: UIView {
+class BoggleView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     weak var delegate: BoggleViewProtocol?
-    let wordDisplay = UILabel()
-    var letterButtons = [BoggleButton]()
+    private let wordDisplay = UILabel()
+    private var letterButtons = [BoggleButton]()
+    private var words: [String] = []
+    private var wordListTableView = UITableView()
     
     init() {
         super.init(frame: CGRect.zero)
         self.backgroundColor = .blue
         
-        let screenArea = UIStackView()
-        screenArea.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(screenArea)
-        screenArea.axis = .horizontal
-        screenArea.distribution = .fill
-        screenArea.spacing = 10
-        screenArea.topAnchor.constraint(equalTo: self.topAnchor, constant: 40).isActive = true
-        screenArea.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
-        screenArea.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
-
-        screenArea.addArrangedSubview(wordDisplay)
+        let rows = UIStackView()
+        rows.axis = .vertical
+        self.addSubview(rows)
+        rows.translatesAutoresizingMaskIntoConstraints = false
+        rows.topAnchor.constraint(equalTo: self.topAnchor, constant: 30).isActive = true
+        rows.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
+        rows.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        rows.spacing = 15
+        
+        rows.addArrangedSubview(wordDisplay)
         wordDisplay.translatesAutoresizingMaskIntoConstraints = false
         wordDisplay.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        wordDisplay.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
+        wordDisplay.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
         wordDisplay.textColor = .white
         wordDisplay.font = UIFont(name: "Helvetica-Bold", size: 36)
         wordDisplay.layer.borderColor = UIColor.white.cgColor
@@ -37,42 +40,31 @@ class BoggleView: UIView {
         wordDisplay.layer.cornerRadius = 3
         wordDisplay.textAlignment = NSTextAlignment.center
         
+        let gameControlsRow = UIStackView()
+        gameControlsRow.axis = .horizontal
+        rows.addArrangedSubview(gameControlsRow)
+        gameControlsRow.distribution = .fillProportionally
+        gameControlsRow.spacing = 10
+        gameControlsRow.translatesAutoresizingMaskIntoConstraints = false
+        
+        let resetButton = BoggleButton()
+        gameControlsRow.addArrangedSubview(resetButton)
+        resetButton.setTitle("Reset Game", for: .normal)
+        resetButton.addTarget(self, action: #selector(self.resetGame), for: .touchUpInside)
+        resetButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
         let clearButton = BoggleButton()
         clearButton.translatesAutoresizingMaskIntoConstraints = false
-        screenArea.addArrangedSubview(clearButton)
-        clearButton.widthAnchor.constraint(equalTo: screenArea.widthAnchor, multiplier: 1/5).isActive = true
+        gameControlsRow.addArrangedSubview(clearButton)
         clearButton.setTitle("Clear", for: .normal)
         clearButton.addTarget(self, action: #selector(self.clearScreen), for: .touchUpInside)
-
+        
         let enterButton = BoggleButton()
         enterButton.translatesAutoresizingMaskIntoConstraints = false
-        screenArea.addArrangedSubview(enterButton)
-        enterButton.widthAnchor.constraint(equalTo: screenArea.widthAnchor, multiplier: 1/5).isActive = true
+        gameControlsRow.addArrangedSubview(enterButton)
         enterButton.setTitle("Add", for: .normal)
         enterButton.addTarget(self, action: #selector(self.addWord), for: .touchUpInside)
 
-        let rows = UIStackView()
-        rows.axis = .vertical
-        self.addSubview(rows)
-        rows.translatesAutoresizingMaskIntoConstraints = false
-        rows.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1/3).isActive = true
-        rows.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
-        rows.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
-        rows.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
-        rows.distribution = .fillEqually
-        rows.spacing = 15
-        
-        let row = UIStackView()
-        row.axis = .horizontal
-        rows.addArrangedSubview(row)
-        row.distribution = .fillEqually
-        row.spacing = 10
-        row.translatesAutoresizingMaskIntoConstraints = false
-        let button = BoggleButton()
-        row.addArrangedSubview(button)
-        button.setTitle("Reset Game", for: .normal)
-        button.addTarget(self, action: #selector(self.resetGame), for: .touchUpInside)
-        
         var buttonIndex = 0
         for _ in 0...3 {
             let row = UIStackView()
@@ -84,12 +76,22 @@ class BoggleView: UIView {
             
             for _ in 0...3 {
                 let button = BoggleButton()
+                button.heightAnchor.constraint(equalToConstant: 40).isActive = true
                 row.addArrangedSubview(button)
                 button.addTarget(self, action: #selector(self.didClickLetter), for: .touchUpInside)
                 buttonIndex += 1
                 letterButtons.append(button)
             }
         }
+        
+        wordListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "wordCell")
+        wordListTableView.delegate = self
+        wordListTableView.dataSource = self
+        rows.addArrangedSubview(wordListTableView)
+        wordListTableView.translatesAutoresizingMaskIntoConstraints = false
+        wordListTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
+        wordListTableView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -20).isActive = true
+
     }
     
     @objc
@@ -122,6 +124,21 @@ class BoggleView: UIView {
     
     func setCurrentWord(text: String) {
         wordDisplay.text = text
+    }
+    
+    func setWords(_ wordList: [String]) {
+        words = wordList
+        wordListTableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return words.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "wordCell", for: indexPath)
+        cell.textLabel?.text = words[indexPath.row]
+        return cell
     }
 
     required init?(coder aDecoder: NSCoder) {

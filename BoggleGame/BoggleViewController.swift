@@ -54,4 +54,9 @@ extension BoggleViewController: BoggleModelProtocol {
     internal func didUpdateCurrentWord(currentWord: String) {
         boggleView.setCurrentWord(text: currentWord)
     }
+    
+    internal func didUpdateWordList(wordList: [String]) {
+        boggleView.setWords(wordList)
+    }
+    
 }
