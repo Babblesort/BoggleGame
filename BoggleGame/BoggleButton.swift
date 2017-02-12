@@ -12,6 +12,7 @@ class BoggleButton: UIButton {
         self.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 24)
         self.setTitleColor(UIColor.white, for: .normal)
         self.setTitleColor(UIColor.green, for: .highlighted)
+        self.setTitleColor(UIColor.lightGray, for: .disabled)
     }
     
     required init?(coder aDecoder: NSCoder) {

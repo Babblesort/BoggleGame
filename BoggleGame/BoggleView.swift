@@ -11,6 +11,7 @@ class BoggleView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     weak var delegate: BoggleViewProtocol?
     private let wordDisplay = UILabel()
+    private let enterButton = BoggleButton()
     private var letterButtons = [BoggleButton]()
     private var words: [String] = []
     private var wordListTableView = UITableView()
@@ -59,7 +60,6 @@ class BoggleView: UIView, UITableViewDelegate, UITableViewDataSource {
         clearButton.setTitle("Clear", for: .normal)
         clearButton.addTarget(self, action: #selector(self.clearScreen), for: .touchUpInside)
         
-        let enterButton = BoggleButton()
         enterButton.translatesAutoresizingMaskIntoConstraints = false
         gameControlsRow.addArrangedSubview(enterButton)
         enterButton.setTitle("Add", for: .normal)
@@ -123,6 +123,7 @@ class BoggleView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     func setCurrentWord(text: String) {
         wordDisplay.text = text
+        enterButton.isEnabled = text.characters.count > 0
     }
     
     func setWords(_ wordList: [String]) {
