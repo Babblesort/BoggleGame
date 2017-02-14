@@ -30,6 +30,20 @@ class BoggleGameTests: XCTestCase {
 
         XCTAssertEqual("", model.currentWord)
     }
+
+    func test_ClearWordClearsCurrentWord() {
+        model.addLetterToCurrentWord(letter: "h")
+        model.addLetterToCurrentWord(letter: "i")
+        model.clearWord()
+        
+        XCTAssertEqual("", model.currentWord)
+    }
+
+    func test_LettersArrayHasCorrectNumberOfLetters() {
+        model.resetGame()
+        
+        XCTAssertEqual(model.randomLetters.count, 16)
+    }
     
     func testExample() {
         // This is an example of a functional test case.

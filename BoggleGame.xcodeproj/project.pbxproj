@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5A453B7C1E3D0EBF00FE03E3 /* BoggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A453B7B1E3D0EBF00FE03E3 /* BoggleButton.swift */; };
 		5A453B7E1E4375B500FE03E3 /* BoggleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A453B7D1E4375B500FE03E3 /* BoggleModel.swift */; };
-		5A453B841E4CB87A00FE03E3 /* BoggleModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A453B831E4CB87A00FE03E3 /* BoggleModelTests.swift */; };
 		5AFCA4D11E3A395D00D45056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA4D01E3A395D00D45056 /* AppDelegate.swift */; };
 		5AFCA4D31E3A395D00D45056 /* BoggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA4D21E3A395D00D45056 /* BoggleViewController.swift */; };
 		5AFCA4D91E3A395D00D45056 /* BoggleGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA4D71E3A395D00D45056 /* BoggleGame.xcdatamodeld */; };
@@ -40,7 +39,6 @@
 /* Begin PBXFileReference section */
 		5A453B7B1E3D0EBF00FE03E3 /* BoggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoggleButton.swift; sourceTree = "<group>"; };
 		5A453B7D1E4375B500FE03E3 /* BoggleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoggleModel.swift; sourceTree = "<group>"; };
-		5A453B831E4CB87A00FE03E3 /* BoggleModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoggleModelTests.swift; sourceTree = "<group>"; };
 		5AFCA4CD1E3A395D00D45056 /* BoggleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoggleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFCA4D01E3A395D00D45056 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AFCA4D21E3A395D00D45056 /* BoggleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoggleViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 		5AFCA4C41E3A395D00D45056 = {
 			isa = PBXGroup;
 			children = (
-				5A453B831E4CB87A00FE03E3 /* BoggleModelTests.swift */,
 				5AFCA4CF1E3A395D00D45056 /* BoggleGame */,
 				5AFCA4E71E3A395D00D45056 /* BoggleGameTests */,
 				5AFCA4F21E3A395D00D45056 /* BoggleGameUITests */,
@@ -284,7 +281,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AFCA4E91E3A395D00D45056 /* BoggleGameTests.swift in Sources */,
-				5A453B841E4CB87A00FE03E3 /* BoggleModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
