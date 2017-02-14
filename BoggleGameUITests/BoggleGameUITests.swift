@@ -12,8 +12,8 @@ class BoggleGameUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+            
+            // Put setup code here. This method is called before the invocation of each test method in the class.
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
@@ -29,6 +29,19 @@ class BoggleGameUITests: XCTestCase {
     }
     
     func testExample() {
+        
+        let app = XCUIApplication()
+        
+        let letterButtonPredicate = NSPredicate(format: "label.length == 1")
+        let letterButtons = app.buttons.matching(letterButtonPredicate)
+        XCTAssertEqual(letterButtons.count, 16)
+
+        let letterButtonSecond = letterButtons.element(boundBy: 1)
+        XCTAssertEqual(letterButtonSecond.label.characters.count, 1)
+        
+//        let currentWordLabel = app.staticTexts.element(boundBy: 0)
+//        letterButtonSecond.tap()
+        
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
