@@ -1,11 +1,3 @@
-//
-//  BoggleGameTests.swift
-//  BoggleGameTests
-//
-//  Created by dev1 on 1/26/17.
-//  Copyright © 2017 Asynchrony. All rights reserved.
-//
-
 import XCTest
 @testable import BoggleGame
 
