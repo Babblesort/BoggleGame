@@ -9,6 +9,13 @@ protocol BoggleModelProtocol: class {
 class BoggleModel {
     
     weak var delegate: BoggleModelProtocol?
+    
+    let dictionaryService: DictionaryService
+    
+    init(dictionaryService:DictionaryService = DictionaryService()) {
+        self.dictionaryService = dictionaryService
+    }
+    
     var currentWord: String = ""
     var randomLetters = [String]()
     let letterCount = 16
@@ -43,11 +50,15 @@ class BoggleModel {
     }
     
     func addWord() {
-        if currentWord.characters.count > 0 {
-            words.append(currentWord)
-            currentWord = ""
-            delegate?.didUpdateCurrentWord(currentWord: currentWord)
-            delegate?.didUpdateWordList(wordList: words)
+        if currentWord.characters.count > 0 {           
+            dictionaryService.checkValidityOf(word: currentWord) { (word, isValid) in
+                if isValid {
+                    self.currentWord = ""
+                    self.words.append(word)
+                    self.delegate?.didUpdateWordList(wordList: self.words)
+                    self.delegate?.didUpdateCurrentWord(currentWord: self.currentWord)
+                }
+            }
         }
     }
 }

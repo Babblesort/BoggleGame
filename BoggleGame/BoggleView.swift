@@ -84,7 +84,7 @@ class BoggleView: UIView, UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        wordListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "wordCell")
+        wordListTableView.register(BoggleTableViewCell.self, forCellReuseIdentifier: "wordcell")
         wordListTableView.delegate = self
         wordListTableView.dataSource = self
         rows.addArrangedSubview(wordListTableView)
@@ -138,6 +138,7 @@ class BoggleView: UIView, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "wordCell", for: indexPath)
         cell.textLabel?.text = words[indexPath.row]
+        cell.detailTextLabel?.text = ""
         return cell
     }
 

@@ -56,7 +56,9 @@ extension BoggleViewController: BoggleModelProtocol {
     }
     
     internal func didUpdateWordList(wordList: [String]) {
-        boggleView.setWords(wordList)
+        DispatchQueue.main.async {
+            self.boggleView.setWords(wordList)
+        }
     }
     
 }
